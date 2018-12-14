@@ -13,31 +13,34 @@ const codes = [
 ];
 
 
-const konami = document.body
-
-
-
 function init() {
   
-  konami.addEventListener('keydown', function(e) {
+   let index = 0
   
-  let index = 0;
+  document.body.addEventListener('keydown', function(e) {
   
-    var inputKey = codes[e.key];
+  
+    var inputKey = e.key;
   
     var requiredkey = codes[index];
-    
+   
+   
     if (inputKey === requiredkey) { 
-      index++;
-    
-    if (index === codes.length) { 
       
+       index++;
+       console.log(index);
+       
+    console.log(codes.length);
+    
+    }if (index === codes.length) { 
+       
       alert("Hurray! You get 30 lives!") ;
       
+     
       index = 0;
     
       }  
-    } else { 
+     else { 
       index = 0;
     }
   })
